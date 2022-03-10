@@ -1,29 +1,29 @@
 import React, {useState} from "react";
 
-function DogCard({data, delData, editPriceData}) {
+function DogCard({data, delData, /*editPriceData*/}) {
   const [stock, setStock]=useState(true)
-  const [priceChange, setPriceChange]=useState("")
+  // const [priceChange, setPriceChange]=useState("")
   
-  function handleEdit(e){
-    setPriceChange(e.target.value)
-  }
+  // function handleEdit(e){
+  //   setPriceChange(e.target.value)
+  // }
   // ------------------------------------------------------------------------
-  function editPrice(e){
-    e.preventDefault();
-    fetch(`http://localhost:6001/Dogs/${data.id}`,{
-      method:"PATCH",
-      headers:{
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        price: parseFloat(priceChange)
-      }),
-    })
-    .then(res=>res.json())
-    .then(data=>editPriceData(data))
+  // function editPrice(e){
+  //   e.preventDefault();
+  //   fetch(`http://localhost:6001/dogs/${data.id}`,{
+  //     method:"PATCH",
+  //     headers:{
+  //       "Content-Type": "application/json"
+  //     },
+  //     body: JSON.stringify({
+  //       price: parseFloat(priceChange)
+  //     }),
+  //   })
+  //   .then(res=>res.json())
+  //   .then(data=>editPriceData(data))
 
-    setPriceChange("")
-  }
+  //   setPriceChange("")
+  // }
   // --------------------------------------------------------------------------
   function inStock(){
     const changeStock = !stock;
@@ -53,7 +53,7 @@ function DogCard({data, delData, editPriceData}) {
       <p>Size: {data.size}</p>
       <br/>
       <p>Description: {data.description}</p>
-      
+
       {/* <div >
       <input type="number" name="editPrice" step="0.01" placeholder="Edit Price" value={priceChange} onChange={handleEdit}/>
       <button onClick={editPrice}>Change</button>
