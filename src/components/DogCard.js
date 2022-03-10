@@ -38,14 +38,7 @@ function DogCard({data, delData, /*editPriceData*/}) {
   }
   // ---------------------------------------------------------------------------
   return (
-    // t.string "name"
-    // t.integer "age"
-    // t.string "breed"
-    // t.string "size"
-    // t.string "description"
-    // t.integer "walk_time"
-    // t.string "image"
-    // t.integer "user_id"
+
     <li className="card">
       <img src={data.image} alt={data.name} />
       <h4>{data.name}</h4>
