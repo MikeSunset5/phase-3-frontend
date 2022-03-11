@@ -6,8 +6,12 @@ function NewDogForm({updateHandle}) {
   const [newDogAge, setNewDogAge]=useState("")
   const [newDogBreed, setNewDogBreed]=useState("")
   const [newDogSize, setNewDogSize]=useState("")
+  const [newDogDescription, setNewDogDescription]=useState("")
 
 
+  function descriptionHandle(e){
+    setNewDogDescription(e.target.value)
+  }  
   function sizeHandle(e){
     setNewDogSize(e.target.value)
   }
@@ -32,9 +36,12 @@ function NewDogForm({updateHandle}) {
       },
       body: JSON.stringify({
         name: newDogName,
-        image: newDogUrl,
+        age: newDogAge,
         breed: newDogBreed,
-        Age: newDogAge
+        size: newDogSize,
+        description: newDogDescription,
+        walk_time: true,
+        image: newDogUrl,    
       }),
     })
     .then(res=>res.json())
@@ -44,23 +51,26 @@ function NewDogForm({updateHandle}) {
     setNewDogUrl("")
     setNewDogAge("")
     setNewDogBreed("")
+    setNewDogSize("")
+    setNewDogDescription("")
   }
 
     // t.string "size"
-    // t.string "description"
+    
     // t.integer "walk_time"
 
   return (
     <div className="new-dog-form">
       <h2>New Dog</h2>
       <form onSubmit={addDogInfo}>
-        <lable>Select Size</lable>
+        <div id="select">
         <select id="size" value={newDogSize} onChange={sizeHandle}>
-          <option >select</option>
+          <option >Select Size</option>
           <option value="small">Small</option>
           <option value="medium">Medium</option>
           <option value="large">Large</option>          
         </select>
+        </div>
         <br/>
         <input 
           type="text"
@@ -89,6 +99,13 @@ function NewDogForm({updateHandle}) {
           placeholder="Breed"
           value={newDogBreed}
           onChange={breedHandle}
+        />
+        <input 
+          type="text"
+          name="description"
+          placeholder="Description"
+          value={newDogDescription}
+          onChange={descriptionHandle}
         />
         <button type="submit">Add Dog</button>
       </form>

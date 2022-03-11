@@ -44,6 +44,7 @@ function DogCard({data, delData, /*editPriceData*/}) {
       <h4>{data.name}</h4>
       <p>Age: {data.age}</p>
       <p>Size: {data.size}</p>
+      <p>Breed: {data.breed}</p>
       <br/>
       <p>Description: {data.description}</p>
 
