@@ -46,7 +46,7 @@ function DogCard({data, delData, /*editPriceData*/}) {
       <p>Size: {data.size}</p>
       <p>Breed: {data.breed}</p>
       <br/>
-      <p>Description: {data.description}</p>
+      <p>{data.description}</p>
 
       {/* <div >
       <input type="number" name="editPrice" step="0.01" placeholder="Edit Price" value={priceChange} onChange={handleEdit}/>

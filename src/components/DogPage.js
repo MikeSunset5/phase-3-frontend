@@ -24,7 +24,7 @@ function DogPage() {
     setAllDogData(delArray)
   }
   const newSearchArray = allDogData.filter(Dog=>{
-    return Dog.name.toLowerCase().includes(searchData.toLocaleLowerCase());
+    return Dog.size.toLowerCase().includes(searchData.toLocaleLowerCase());
   })
   function priceHandle(newPrice){
     const newPriceArray = allDogData.map((price) => {
