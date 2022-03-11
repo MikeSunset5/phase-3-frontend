@@ -56,10 +56,18 @@ main {
   background-color: skyblue;
 }
 
+.new-dog-form select {
+  display: flex;
+  justify-content: center;
+  margin-right: 2rem;
+  height: 3rem;
+}
+
 .new-dog-form form {
   display: flex;
   justify-content: center;
 }
+
 
 .new-dog-form input {
   margin-right: 2rem;
